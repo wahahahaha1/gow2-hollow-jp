@@ -1,0 +1,9 @@
+# 既定は LF で保存する。
+* text=auto eol=lf
+
+# バッチファイルは cp932 (Shift-JIS) + CRLF でなければ日本語 Windows の cmd で壊れる。
+# 改行だけは必ず CRLF に戻す（cp932 の 2 バイト目に 0x0D/0x0A は現れないので変換は安全）。
+*.bat text eol=crlf
+
+# 設定の見本は Windows のメモ帳で開かれる。CRLF にしておく。
+*.ini text eol=crlf

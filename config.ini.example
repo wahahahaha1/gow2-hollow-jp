@@ -1,0 +1,60 @@
+; GoW2 日本語音声移植ツール - 設定ファイル
+;
+; このファイルを config.ini という名前でコピーし、自分の環境に合わせて書き換えてください。
+; パスは絶対パスで、末尾の \ は不要です。
+
+[paths]
+
+; Hollow を導入したフォルダ（GoW2Hollow_Launcher.exe がある場所）
+hollow = C:\Games\Gears of War 2 - Hollow
+
+; ISO から集めた *_LOC_jpn.xxx を置いたフォルダ（391本）
+jpn_only = D:\gow2\jpn_only
+
+; 作業用フォルダ。中間ファイルはすべてこの下に作られる（自動生成）
+;   dec_jpn\              展開した360パッケージ
+;   snd_jpn\              書き出した XMA
+;   jp_ogg\               変換した Ogg
+;   upk_jp\               再構築した .upk
+;   original_Sounds_INT\  差し替え前の控え
+;   plan.json             対応表
+work = D:\gow2\work
+
+; --- 以下は任意。空にしておけば work の下に自動で作られる ---
+
+; 無改造の Sounds\INT を控えた場所。手順2 が作り、手順7 と 99_元に戻す.bat が使う。
+; 既定: work\original_Sounds_INT
+original =
+
+; 展開した360パッケージの置き場所（手順3 の出力）。既定: work\dec_jpn
+dec =
+
+; 書き出した XMA の置き場所（手順4 の出力）。既定: work\snd_jpn
+snd =
+
+
+[tools]
+
+; 4つとも実行ファイルまでのフルパスを書くこと
+
+; Gildor's Unreal package decompressor
+decompress = D:\gow2\tools\decompress.exe
+
+; umodel (UE Viewer)。32bit 版なら umodel.exe
+umodel = D:\gow2\tools\umodel_64.exe
+
+; vgmstream-cli
+vgmstream = D:\gow2\tools\vgmstream-win64\vgmstream-cli.exe
+
+; ffmpeg
+ffmpeg = D:\gow2\tools\ffmpeg\bin\ffmpeg.exe
+
+
+[convert]
+
+; Ogg Vorbis の品質 (0〜10)。PC版オリジナルは公称32kb/s 相当。
+; XMA からの再エンコードになるので、少し余裕を持たせた 3 を既定にしている。
+quality = 3
+
+; 出力サンプルレート。両側とも 22050Hz なので通常は変更不要。
+rate = 22050

@@ -1,0 +1,26 @@
+# 各自の環境設定。config.ini.example をコピーして作る
+config.ini
+
+# 作業用の中間ファイル
+work/
+dec_jpn/
+snd_jpn/
+jp_ogg/
+upk_jp/
+original_Sounds_INT/
+*.json
+*.log
+
+# 同梱する Python（配布 zip にだけ入れる。PYTHON.md を参照）
+python/
+
+# ゲーム由来のデータは絶対に含めない
+*.upk
+*.xxx
+*.xma
+*.ogg
+*.wav
+*.bik
+
+__pycache__/
+*.pyc
